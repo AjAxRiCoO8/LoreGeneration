@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LoreActor : MonoBehaviour {
 
+    public string name;
+
 	// Use this for initialization
 	void Start () {
 		
