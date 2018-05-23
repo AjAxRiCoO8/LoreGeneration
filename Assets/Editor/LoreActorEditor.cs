@@ -10,8 +10,9 @@ public class LoreActorEditor : Editor {
     {
         LoreActor actor = (LoreActor)target;
 
-        actor.name = EditorGUILayout.TextField("Name: ", actor.name);
+        actor.name = EditorGUILayout.Popup("Name: ", actor.name, actor.loreManager.Actors.ToArray());
 
-        int selected = EditorGUILayout.Popup("State: ", 0, actor.loreManager.States.ToArray());
+        actor.state = EditorGUILayout.Popup("State: ", actor.state, actor.loreManager.States.ToArray());
+
     }
 }
