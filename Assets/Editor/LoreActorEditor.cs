@@ -10,9 +10,13 @@ public class LoreActorEditor : Editor {
     {
         LoreActor actor = (LoreActor)target;
 
-        actor.name = EditorGUILayout.Popup("Name: ", actor.name, actor.loreManager.Actors.ToArray());
-
-        actor.state = EditorGUILayout.Popup("State: ", actor.state, actor.loreManager.States.ToArray());
-
+        if (actor.loreManager == null)
+        {
+            actor.loreManager = EditorGUILayout.ObjectField(actor.loreManager, typeof(LoreManager), true) as LoreManager;
+        }
+        else
+        {
+            actor.Name = EditorGUILayout.Popup("Name: ", actor.Name, actor.loreManager.Actors.ToArray());
+        }
     }
 }

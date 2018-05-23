@@ -10,6 +10,10 @@ public class LoreManager : MonoBehaviour {
     [SerializeField]
     List<string> actors = new List<string>();
 
+    [SerializeField]
+    List<LoreRule> rules = new List<LoreRule>();
+
+    [HideInInspector]
     static LoreManager instance;
 
 	// Use this for initialization
@@ -38,5 +42,11 @@ public class LoreManager : MonoBehaviour {
     {
         get { return actors; }
         set { actors = value; }
+    }
+
+    public List<LoreRule> Rules
+    {
+        get { return rules; }
+        set { rules = value; }
     }
 }

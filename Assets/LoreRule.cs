@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class LoreRule {
 
-    private List<ILoreProperty> consumedProperties;
-    private List<ILoreProperty> producedProperties;
+    [SerializeField]
+    private List<string> consumedProperties;
+    [SerializeField]
+    private List<string> producedProperties;
 
-    LoreRule(List<ILoreProperty> consumedProperties, List<ILoreProperty> producedProperties)
+    LoreRule(List<string> consumedProperties, List<string> producedProperties)
     {
         this.consumedProperties = consumedProperties;
         this.producedProperties = producedProperties;
     }
 
-    public List<ILoreProperty> GetConsumedProperties() { return consumedProperties; }
-    public List<ILoreProperty> GetProducedProperties() { return producedProperties; }
+    public List<string> GetConsumedProperties() { return consumedProperties; }
+    public List<string> GetProducedProperties() { return producedProperties; }
 }
