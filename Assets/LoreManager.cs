@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoreActor : MonoBehaviour {
-    
-    public LoreManager loreManager;
+public class LoreManager : MonoBehaviour {
 
-    public string name;
-
-    public string state;
+    [SerializeField]
+    List<string> states = new List<string>();
 
 	// Use this for initialization
 	void Start () {
@@ -19,4 +16,9 @@ public class LoreActor : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public List<string> States
+    {
+        get { return states; }
+    }
 }
