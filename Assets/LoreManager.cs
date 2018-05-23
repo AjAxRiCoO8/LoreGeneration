@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LoreManager : MonoBehaviour {
 
+    [SerializeField]
+    List<string> states = new List<string>();
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +16,9 @@ public class LoreManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public List<string> States
+    {
+        get { return states; }
+    }
 }
