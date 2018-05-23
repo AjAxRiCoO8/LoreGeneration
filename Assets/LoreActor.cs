@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LoreActor : MonoBehaviour {
+    
+    public LoreManager loreManager;
 
     public string name;
+
+    public string state;
 
 	// Use this for initialization
 	void Start () {
