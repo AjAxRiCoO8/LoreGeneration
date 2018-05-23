@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class LoreRule : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private List<LoreProperty> consumedProperties;
+    private List<LoreProperty> producedProperties;
+
+    LoreRule()
+    {
+
+    }
 }
