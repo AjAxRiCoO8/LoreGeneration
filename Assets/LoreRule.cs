@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoreRule : MonoBehaviour {
+public class LoreRule {
 
-    private List<LoreProperty> consumedProperties;
-    private List<LoreProperty> producedProperties;
+    private List<ILoreProperty> consumedProperties;
+    private List<ILoreProperty> producedProperties;
 
-    LoreRule()
+    LoreRule(List<ILoreProperty> consumedProperties, List<ILoreProperty> producedProperties)
     {
-
+        this.consumedProperties = consumedProperties;
+        this.producedProperties = producedProperties;
     }
+
+    public List<ILoreProperty> GetConsumedProperties() { return consumedProperties; }
+    public List<ILoreProperty> GetProducedProperties() { return producedProperties; }
 }
