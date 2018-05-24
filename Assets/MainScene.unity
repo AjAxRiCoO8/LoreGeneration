@@ -251,126 +251,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 204071328}
---- !u!1 &241267325
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 241267327}
-  - component: {fileID: 241267326}
-  m_Layer: 0
-  m_Name: LoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &241267326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 241267325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff84537959a2bb49a19109213fcf4de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actors:
-  - Teacher
-  - TeacherIsHappy
-  - TeacherIsSad
-  - Presentor
-  - PresentorIsNervous
-  - PresentorIsConfident
-  - PowerPoint
-  - PowerPointIsGood
-  - PowerPointIsBad
-  - Chair
-  - ChairIsGood
-  - ChairIsBad
-  - GoodGrade
-  - BadGrade
-  - NoGrade
-  rules:
-  - ruleStory: Because the Teacher was happy, and the Presentor was Confident, the
-      Presentor got a good grade.
-    consumedProperties: 01000000050000000e000000
-    producedProperties: 0c0000000100000005000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the Presentor was confident, and the powerpoint was good, the
-      Presentor got a good grade.
-    consumedProperties: 0500000007000000
-    producedProperties: 0c000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the Teacher was happy, and the powerpoint was good, the Presentor
-      got a good grade.
-    consumedProperties: 0100000007000000
-    producedProperties: 0c000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the chair is good, the Teacher is happy.
-    consumedProperties: 0a00000000000000
-    producedProperties: 01000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the chair is bad, the Teacher is sad.
-    consumedProperties: 0b00000000000000
-    producedProperties: 02000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the Teacher was sad, and the Presentor was nervous, the Presentor
-      got a bad grade.
-    consumedProperties: 0200000004000000
-    producedProperties: 0d000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the Presentor was nervous, and the powerpoint was bad, the
-      Presentor got a bad grade.
-    consumedProperties: 0400000008000000
-    producedProperties: 0d000000
-    hasBeenProcessed: 0
-  - ruleStory: Because the Teacher was sad, and the powerpoint was bad, the Presentor
-      got a bad grade.
-    consumedProperties: 0200000008000000
-    producedProperties: 0d000000
-    hasBeenProcessed: 0
-  - ruleStory: Chair is good.
-    consumedProperties: 09000000
-    producedProperties: 0a000000
-    hasBeenProcessed: 0
-  - ruleStory: Chair is bad.
-    consumedProperties: 09000000
-    producedProperties: 0b000000
-    hasBeenProcessed: 0
-  - ruleStory: Presentor is nervous.
-    consumedProperties: 03000000
-    producedProperties: 04000000
-    hasBeenProcessed: 0
-  - ruleStory: Presentor is confident.
-    consumedProperties: 03000000
-    producedProperties: 05000000
-    hasBeenProcessed: 0
-  - ruleStory: Powerpoint is good.
-    consumedProperties: 06000000
-    producedProperties: 07000000
-    hasBeenProcessed: 0
-  - ruleStory: Powerpoint is bad.
-    consumedProperties: 06000000
-    producedProperties: 08000000
-    hasBeenProcessed: 0
-  init: 03000000000000000900000006000000
---- !u!4 &241267327
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 241267325}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1076.1521, y: 608.20056, z: -34.947605}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &329906540
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +332,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &530540082
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1076.1521
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 608.20056
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -34.947605
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4106102526407530, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: de3801a9092da4d1898d598a3bd3b23f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &629348899
 GameObject:
   m_ObjectHideFlags: 0
