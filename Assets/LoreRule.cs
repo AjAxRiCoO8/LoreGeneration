@@ -27,6 +27,7 @@ public class LoreRule {
         this.producedProperties = producedProperties;
     }
 
+    // Checks if this rule has the same consumed properties as the given list.
     public bool HasSameConsumedProperties(List<int> consumedProperties)
     {
         if (this.consumedProperties.Count != consumedProperties.Count)
@@ -50,6 +51,7 @@ public class LoreRule {
         }
     }
 
+    // checks if this rule has the same produced properties as the given list.
     public bool HasSameProducedProperties(List<int> producedProperties)
     {
         if (this.producedProperties.Count != producedProperties.Count)

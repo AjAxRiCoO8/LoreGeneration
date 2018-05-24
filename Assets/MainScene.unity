@@ -293,11 +293,12 @@ MonoBehaviour:
   - ChairIsBad
   - GoodGrade
   - BadGrade
+  - NoGrade
   rules:
   - ruleStory: Because the Teacher was happy, and the Presentor was Confident, the
       Presentor got a good grade.
-    consumedProperties: 0100000005000000
-    producedProperties: 0c000000
+    consumedProperties: 01000000050000000e000000
+    producedProperties: 0c0000000100000005000000
     hasBeenProcessed: 0
   - ruleStory: Because the Presentor was confident, and the powerpoint was good, the
       Presentor got a good grade.
@@ -310,11 +311,11 @@ MonoBehaviour:
     producedProperties: 0c000000
     hasBeenProcessed: 0
   - ruleStory: Because the chair is good, the Teacher is happy.
-    consumedProperties: 0a000000
+    consumedProperties: 0a00000000000000
     producedProperties: 01000000
     hasBeenProcessed: 0
   - ruleStory: Because the chair is bad, the Teacher is sad.
-    consumedProperties: 0b000000
+    consumedProperties: 0b00000000000000
     producedProperties: 02000000
     hasBeenProcessed: 0
   - ruleStory: Because the Teacher was sad, and the Presentor was nervous, the Presentor
@@ -328,7 +329,7 @@ MonoBehaviour:
     producedProperties: 0d000000
     hasBeenProcessed: 0
   - ruleStory: Because the Teacher was sad, and the powerpoint was bad, the Presentor
-      got a bade grade.
+      got a bad grade.
     consumedProperties: 0200000008000000
     producedProperties: 0d000000
     hasBeenProcessed: 0

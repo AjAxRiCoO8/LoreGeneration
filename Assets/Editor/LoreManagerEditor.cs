@@ -141,7 +141,7 @@ public class LoreManagerEditor : Editor
                 EditorGUILayout.EndHorizontal();
                 EditorGUILayout.LabelField("Consumed Properties");
 
-                if (GUILayout.Button("Add New Consumed Propery", GUILayout.MaxWidth(200), GUILayout.MaxHeight(20)))
+                if (GUILayout.Button("Add New Consumed Property", GUILayout.MaxWidth(200), GUILayout.MaxHeight(20)))
                 {
                     consumedProperties.InsertArrayElementAtIndex(consumedProperties.arraySize);
                     consumedProperties.GetArrayElementAtIndex(consumedProperties.arraySize - 1).intValue = 0;
