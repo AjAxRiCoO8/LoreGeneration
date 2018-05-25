@@ -37,6 +37,8 @@ public class LoreManager : MonoBehaviour
     [HideInInspector]
     static LoreManager instance;
 
+    bool StoryComplete = false;
+
     // Use this for initialization
     void Start()
     {
@@ -70,7 +72,14 @@ public class LoreManager : MonoBehaviour
 
     public void UpdateRules()
     {
+        if (StoryComplete)
+        {
+            return;
+        }
+
         int i = 0;
+
+        List<LoreProcessedRule> validRules = new List<LoreProcessedRule>();
 
         // Check if a rule is valid in this frame
         for (i = 0; i < processedRules.Count; i++)
@@ -79,21 +88,22 @@ public class LoreManager : MonoBehaviour
             if (processedRules[i].IsValidRule(storyState))
             {
                 // if so do the rule and end the frame
-                processedRules[i].DoRule(storyState);
-                break;
+                validRules.Add(processedRules[i]);
             }
+        }
+        if (validRules.Count > 0)
+        {
+            validRules[Random.Range(0, validRules.Count)].DoRule(storyState);
         }
 
         //Debug.Log("Iterations needed for rule: " + LOOP_COUNTER);
         TOTAL_LOOPS += LOOP_COUNTER;
         LOOP_COUNTER = 0;
 
-        if (i == processedRules.Count)
+        if (validRules.Count == 0)
         {
-            //Debug.Log("Iterations needed: " + LoreManager.TOTAL_LOOPS);
-            Debug.Log(story);
-
-            enabled = false;
+            StoryComplete = true;
+            UpdateStory("\n<b>The End</b>");
         }
     }
 
@@ -113,6 +123,7 @@ public class LoreManager : MonoBehaviour
         storyState = new List<int>(init);
         story = "";
         UIManager.GetInstance().SetStoryText(story);
+        StoryComplete = false;
     }
 
     public int GetUserChoicePercentage()

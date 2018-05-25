@@ -113,7 +113,7 @@ public class LoreProcessedRule {
         else //more than 1 with the same input
         {
 
-            if (Random.Range(0, 100) > LoreManager.GetInstance().GetUserChoicePercentage())//No user choice story continue
+            if (Random.Range(0, 100) >= LoreManager.GetInstance().GetUserChoicePercentage())//No user choice story continue
             {
                 // Create a random number depending on how many different outcomes there are for this rule.
                 int randomOutcome = (Random.Range(0, 100) / (int)RuleChance);

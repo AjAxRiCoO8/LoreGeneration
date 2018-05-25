@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff84537959a2bb49a19109213fcf4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userChoicePercentage: 89
   actors:
   - Teacher
   - TeacherIsHappy
@@ -75,12 +76,12 @@ MonoBehaviour:
     hasBeenProcessed: 0
   - ruleStory: Because the Presentor was confident, and the powerpoint was good, the
       Presentor got a good grade.
-    consumedProperties: 0500000007000000
+    consumedProperties: 05000000070000000e000000
     producedProperties: 0c000000
     hasBeenProcessed: 0
   - ruleStory: Because the Teacher was happy, and the powerpoint was good, the Presentor
       got a good grade.
-    consumedProperties: 0100000007000000
+    consumedProperties: 01000000070000000e000000
     producedProperties: 0c000000
     hasBeenProcessed: 0
   - ruleStory: Because the chair is good, the Teacher is happy.
@@ -93,17 +94,17 @@ MonoBehaviour:
     hasBeenProcessed: 0
   - ruleStory: Because the Teacher was sad, and the Presentor was nervous, the Presentor
       got a bad grade.
-    consumedProperties: 0200000004000000
+    consumedProperties: 02000000040000000e000000
     producedProperties: 0d000000
     hasBeenProcessed: 0
   - ruleStory: Because the Presentor was nervous, and the powerpoint was bad, the
       Presentor got a bad grade.
-    consumedProperties: 0400000008000000
+    consumedProperties: 04000000080000000e000000
     producedProperties: 0d000000
     hasBeenProcessed: 0
   - ruleStory: Because the Teacher was sad, and the powerpoint was bad, the Presentor
       got a bad grade.
-    consumedProperties: 0200000008000000
+    consumedProperties: 02000000080000000e000000
     producedProperties: 0d000000
     hasBeenProcessed: 0
   - ruleStory: Chair is good.
@@ -130,4 +131,5 @@ MonoBehaviour:
     consumedProperties: 06000000
     producedProperties: 08000000
     hasBeenProcessed: 0
-  init: 03000000000000000900000006000000
+  init: 030000000000000009000000060000000e000000
+  storyState: 
