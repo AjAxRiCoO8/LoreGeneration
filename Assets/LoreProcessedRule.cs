@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoreProcessedRule {
 
@@ -104,29 +105,56 @@ public class LoreProcessedRule {
             // Add produced properties to the storystate
             for (int i = 0; i < producedProperties[0].Count; i++)
             {
-                LoreManager.LOOP_COUNTER++;
                 storyState.Add(producedProperties[0][i]);
             }
             Debug.Log(producedStory[0]);
+            LoreManager.GetInstance().UpdateStory(producedStory[0]);
         }
-        else
+        else //more than 1 with the same input
         {
-            // Create a random number depending on how many different outcomes there are for this rule.
-            int randomOutcome = (Random.Range(0, 100) / (int)RuleChance);
 
-            if (randomOutcome >= producedProperties.Count || randomOutcome < 0)
+            if (Random.Range(0, 100) > LoreManager.GetInstance().GetUserChoicePercentage())//No user choice story continue
             {
-                Debug.Log("Something went wrong with randomOutcome in LoreProcessedRule");
-            }
+                // Create a random number depending on how many different outcomes there are for this rule.
+                int randomOutcome = (Random.Range(0, 100) / (int)RuleChance);
 
-            // add produced properties to the storystate.
-            for (int i = 0; i < producedProperties[randomOutcome].Count; i++)
-            {
-                LoreManager.LOOP_COUNTER++;
-                storyState.Add(producedProperties[randomOutcome][i]);
+                if (randomOutcome >= producedProperties.Count || randomOutcome < 0)
+                {
+                    Debug.Log("Something went wrong with randomOutcome in LoreProcessedRule");
+                }
+                ProcesRuleOutcom(randomOutcome, storyState);
             }
-            Debug.Log(producedStory[randomOutcome]);
+            else//User choice
+            {
+                CreateUserChoice(AmountOfRules, storyState);
+            } 
         }
+    }
+
+    //create a choice for the user to make
+    void CreateUserChoice(int numberOfChoices, List<int> storyState)
+    {
+        UIManager.GetInstance().ActivateChoiceUI();
+
+        for (int i = 0; i < numberOfChoices; i++)
+        {
+            int outcome = i;
+            LoreManager.LOOP_COUNTER++;
+            UIManager.GetInstance().storyOptionButtonsUI[i].onClick.AddListener(delegate {ProcesRuleOutcom(outcome, storyState); UIManager.GetInstance().DeactivateChoiceUI(); });
+            UIManager.GetInstance().storyOptionButtonsUI[i].GetComponentInChildren<Text>().text = producedStory[i];
+        }
+    }
+
+    void ProcesRuleOutcom(int outcome, List<int> storyState)
+    {
+        // add produced properties to the storystate.
+        for (int i = 0; i < producedProperties[outcome].Count; i++)
+        {
+            LoreManager.LOOP_COUNTER++;
+            storyState.Add(producedProperties[outcome][i]);
+        }
+        Debug.Log(producedStory[outcome]);
+        LoreManager.GetInstance().UpdateStory(producedStory[outcome]);
     }
 
     public bool HasSimilarRules

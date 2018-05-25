@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //[ExecuteInEditMode]
 public class LoreManager : MonoBehaviour {
 
     public static int LOOP_COUNTER = 0;
     public static int TOTAL_LOOPS = 0;
+
+    [SerializeField]
+    [Range(0, 100)]
+    int userChoicePercentage;
 
     [SerializeField]
     List<string> actors = new List<string>();
@@ -22,10 +27,13 @@ public class LoreManager : MonoBehaviour {
     List<int> init = new List<int>(); // Start list
 
     [HideInInspector]
+    string story;
+
+    [HideInInspector]
     static LoreManager instance;
 
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start () 
     {
         instance = this;
 
@@ -52,9 +60,8 @@ public class LoreManager : MonoBehaviour {
             processedRules.Add(processedRule);
         }
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    public void UpdateRules()
     {
         int i = 0;
 
@@ -73,17 +80,30 @@ public class LoreManager : MonoBehaviour {
         //Debug.Log("Iterations needed for rule: " + LOOP_COUNTER);
         TOTAL_LOOPS += LOOP_COUNTER;
         LOOP_COUNTER = 0;
-        
+
         if (i == processedRules.Count)
         {
             //Debug.Log("Iterations needed: " + LoreManager.TOTAL_LOOPS);
+            Debug.Log(story);
+
             enabled = false;
         }
-	}
+    }
 
     public static LoreManager GetInstance()
     {
         return instance;
+    }
+
+    public void UpdateStory(string newLine)
+    {
+        story += " " + newLine;
+        UIManager.GetInstance().SetStoryText(story);
+    }
+
+    public int GetUserChoicePercentage()
+    {
+        return userChoicePercentage;
     }
 
     public List<string> Actors
