@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //[ExecuteInEditMode]
-public class LoreManager : MonoBehaviour {
+public class LoreManager : MonoBehaviour
+{
 
     public static int LOOP_COUNTER = 0;
     public static int TOTAL_LOOPS = 0;
@@ -26,6 +27,10 @@ public class LoreManager : MonoBehaviour {
     [HideInInspector]
     List<int> init = new List<int>(); // Start list
 
+    [SerializeField]
+    [HideInInspector]
+    List<int> storyState;
+
     [HideInInspector]
     string story;
 
@@ -33,9 +38,11 @@ public class LoreManager : MonoBehaviour {
     static LoreManager instance;
 
     // Use this for initialization
-    void Start () 
+    void Start()
     {
         instance = this;
+
+        storyState = new List<int>(init);
 
         // Process all rules, checking for similar rules.
         for (int i = 0; i < rules.Count; i++)
@@ -59,7 +66,7 @@ public class LoreManager : MonoBehaviour {
 
             processedRules.Add(processedRule);
         }
-	}
+    }
 
     public void UpdateRules()
     {
@@ -69,10 +76,10 @@ public class LoreManager : MonoBehaviour {
         for (i = 0; i < processedRules.Count; i++)
         {
             LoreManager.LOOP_COUNTER++;
-            if (processedRules[i].IsValidRule(init))
+            if (processedRules[i].IsValidRule(storyState))
             {
                 // if so do the rule and end the frame
-                processedRules[i].DoRule(init);
+                processedRules[i].DoRule(storyState);
                 break;
             }
         }
@@ -101,6 +108,13 @@ public class LoreManager : MonoBehaviour {
         UIManager.GetInstance().SetStoryText(story);
     }
 
+    public void ResetStory()
+    {
+        storyState = new List<int>(init);
+        story = "";
+        UIManager.GetInstance().SetStoryText(story);
+    }
+
     public int GetUserChoicePercentage()
     {
         return userChoicePercentage;
@@ -122,5 +136,11 @@ public class LoreManager : MonoBehaviour {
     {
         get { return init; }
         set { init = value; }
+    }
+
+    public List<int> StoryState
+    {
+        get { return storyState; }
+        set { storyState = value; }
     }
 }

@@ -20,10 +20,15 @@ public class UIManager : MonoBehaviour
     [HideInInspector]
     static UIManager instance;
 
+    [SerializeField]
+    public Button newStart;
+
 
     private void Start()
     {
         instance = this;
+
+        newStart.onClick.AddListener(delegate { ResetStory(); });
     }
 
     public void ActivateChoiceUI()
@@ -51,5 +56,10 @@ public class UIManager : MonoBehaviour
     public void SetStoryText(string text)
     {
         storyTextUI.text = text;
+    }
+
+    public void ResetStory()
+    {
+        LoreManager.GetInstance().ResetStory();
     }
 }
