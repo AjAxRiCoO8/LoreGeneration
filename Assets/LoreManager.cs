@@ -123,6 +123,12 @@ public class LoreManager : MonoBehaviour
         storyState = new List<int>(init);
         story = "";
         UIManager.GetInstance().SetStoryText(story);
+
+        foreach (var rule in rules)
+        {
+            rule.hasBeenProcessed = false;
+        }
+
         StoryComplete = false;
     }
 
