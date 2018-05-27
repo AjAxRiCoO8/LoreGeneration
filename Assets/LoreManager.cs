@@ -12,7 +12,7 @@ public class LoreManager : MonoBehaviour
 
     [SerializeField]
     [Range(0, 100)]
-    int userChoicePercentage;
+    public int userChoicePercentage;
 
     [SerializeField]
     List<string> actors = new List<string>();
@@ -37,7 +37,12 @@ public class LoreManager : MonoBehaviour
     [HideInInspector]
     static LoreManager instance;
 
-    bool StoryComplete = false;
+    [HideInInspector]
+    public bool StoryComplete = false;
+
+    [HideInInspector]
+    public int lastChosenRule;
+
 
     // Use this for initialization
     void Start()
@@ -54,14 +59,14 @@ public class LoreManager : MonoBehaviour
                 continue;
             }
 
-            LoreProcessedRule processedRule = new LoreProcessedRule(rules[i]);
+            LoreProcessedRule processedRule = new LoreProcessedRule(rules[i], i);
             rules[i].hasBeenProcessed = true;
 
             for (int j = i + 1; j < rules.Count; j++)
             {
                 if (rules[i].HasSameConsumedProperties(rules[j].ConsumedProperties))
                 {
-                    processedRule.AddRule(rules[j]);
+                    processedRule.AddRule(rules[j], j);
                     rules[j].hasBeenProcessed = true;
                 }
             }
@@ -93,7 +98,9 @@ public class LoreManager : MonoBehaviour
         }
         if (validRules.Count > 0)
         {
-            validRules[Random.Range(0, validRules.Count)].DoRule(storyState);
+            int randomInputRule = Random.Range(0, validRules.Count);
+
+            lastChosenRule = validRules[randomInputRule].DoRule(storyState);
         }
 
         //Debug.Log("Iterations needed for rule: " + LOOP_COUNTER);
@@ -130,6 +137,7 @@ public class LoreManager : MonoBehaviour
         }
 
         StoryComplete = false;
+        lastChosenRule = -1;
     }
 
     public int GetUserChoicePercentage()

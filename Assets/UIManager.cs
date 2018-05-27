@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     public Button newStart;
 
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
 

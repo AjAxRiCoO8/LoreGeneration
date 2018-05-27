@@ -11,24 +11,17 @@ public class LoreProcessedRule {
     List<List<int>> producedProperties = new List<List<int>>();
     // Stores the stories relevant to the produced property. Are on the same index.
     List<string> producedStory = new List<string>();
+    List<int> ruleNumber = new List<int>();
 
     public LoreProcessedRule() { }
 
-    public LoreProcessedRule(LoreRule rule)
+    public LoreProcessedRule(LoreRule rule, int index)
     {
-        AddRule(rule);
-    }
-
-    public LoreProcessedRule(List<LoreRule> rules)
-    {
-        foreach (LoreRule rule in rules)
-        {
-            AddRule(rule);
-        }
+        AddRule(rule, index);
     }
 
     // Adds a rule to the lists.
-    public void AddRule(LoreRule rule)
+    public void AddRule(LoreRule rule, int index)
     {
         if (consumedProperties.Count == 0)
         {
@@ -36,6 +29,7 @@ public class LoreProcessedRule {
             consumedProperties.AddRange(rule.ConsumedProperties);
             producedProperties.Add(rule.ProducedProperties);
             producedStory.Add(rule.RuleStory);
+            ruleNumber.Add(index);
         }
         else
         {
@@ -54,6 +48,7 @@ public class LoreProcessedRule {
                 // if not add it to the list.
                 producedProperties.Add(rule.ProducedProperties);
                 producedStory.Add(rule.RuleStory);
+                ruleNumber.Add(index);
             }
         }
     }
@@ -87,7 +82,7 @@ public class LoreProcessedRule {
     }
 
     // Activate the rule.
-    public void DoRule(List<int> storyState)
+    public int DoRule(List<int> storyState)
     {
         // Remove all consumed properties from the storystate.
         for (int i = 0; i < consumedProperties.Count; i++)
@@ -103,12 +98,7 @@ public class LoreProcessedRule {
         if (!HasSimilarRules)
         {
             // Add produced properties to the storystate
-            for (int i = 0; i < producedProperties[0].Count; i++)
-            {
-                storyState.Add(producedProperties[0][i]);
-            }
-            Debug.Log(producedStory[0]);
-            LoreManager.GetInstance().UpdateStory(producedStory[0]);
+            return ProcesRuleOutcom(0, storyState);
         }
         else //more than 1 with the same input
         {
@@ -116,17 +106,18 @@ public class LoreProcessedRule {
             if (Random.Range(0, 100) >= LoreManager.GetInstance().GetUserChoicePercentage())//No user choice story continue
             {
                 // Create a random number depending on how many different outcomes there are for this rule.
-                int randomOutcome = (Random.Range(0, 100) / (int)RuleChance);
+                int randomOutcome = (Random.Range(0, 99) / (int)RuleChance);
 
                 if (randomOutcome >= producedProperties.Count || randomOutcome < 0)
                 {
                     Debug.Log("Something went wrong with randomOutcome in LoreProcessedRule");
                 }
-                ProcesRuleOutcom(randomOutcome, storyState);
+                return ProcesRuleOutcom(randomOutcome, storyState);
             }
             else//User choice
             {
                 CreateUserChoice(AmountOfRules, storyState);
+                return -1;
             } 
         }
     }
@@ -145,7 +136,7 @@ public class LoreProcessedRule {
         }
     }
 
-    void ProcesRuleOutcom(int outcome, List<int> storyState)
+    int ProcesRuleOutcom(int outcome, List<int> storyState)
     {
         // add produced properties to the storystate.
         for (int i = 0; i < producedProperties[outcome].Count; i++)
@@ -155,6 +146,7 @@ public class LoreProcessedRule {
         }
         Debug.Log(producedStory[outcome]);
         LoreManager.GetInstance().UpdateStory(producedStory[outcome]);
+        return ruleNumber[outcome];
     }
 
     public bool HasSimilarRules

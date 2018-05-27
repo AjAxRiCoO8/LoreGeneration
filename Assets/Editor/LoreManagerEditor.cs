@@ -130,7 +130,7 @@ public class LoreManagerEditor : Editor
                 //Or
 
                 //2 : Full custom GUI Layout <-- Choose me I can be fully customized with GUI options.
-                EditorGUILayout.LabelField("Rule #" + (i + 1).ToString());
+                EditorGUILayout.LabelField("Rule #" + (i).ToString());
 
                 // Array fields with remove at index
                 EditorGUILayout.Space();
@@ -188,7 +188,7 @@ public class LoreManagerEditor : Editor
             EditorGUILayout.Space();
 
             //Remove this index from the List
-            if (GUILayout.Button("Remove Rule #" + (i + 1).ToString()))
+            if (GUILayout.Button("Remove Rule #" + (i).ToString()))
             {
                 rules.DeleteArrayElementAtIndex(i);
             }
