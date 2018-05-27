@@ -99,8 +99,8 @@ MonoBehaviour:
     producedProperties: 0c0000000700000001000000
     hasBeenProcessed: 0
   - ruleStory: Because the chair is good, the teacher is happy.
-    consumedProperties: 0a00000000000000
-    producedProperties: 01000000
+    consumedProperties: 0a000000000000000e000000
+    producedProperties: 010000000e000000
     hasBeenProcessed: 0
   - ruleStory: Because the chair is bad, the teacher is sad.
     consumedProperties: 0b00000000000000
@@ -122,33 +122,33 @@ MonoBehaviour:
     producedProperties: 0d0000000200000008000000
     hasBeenProcessed: 0
   - ruleStory: The teacher's chair is good.
-    consumedProperties: 09000000
-    producedProperties: 0a000000
+    consumedProperties: 090000000e000000
+    producedProperties: 0a0000000e000000
     hasBeenProcessed: 0
   - ruleStory: The teacher's chair is bad.
-    consumedProperties: 09000000
-    producedProperties: 0b000000
+    consumedProperties: 090000000e000000
+    producedProperties: 0b0000000e000000
     hasBeenProcessed: 0
   - ruleStory: The student is nervous.
-    consumedProperties: 03000000
-    producedProperties: 04000000
+    consumedProperties: 030000000e000000
+    producedProperties: 040000000e000000
     hasBeenProcessed: 0
   - ruleStory: The student is confident.
-    consumedProperties: 03000000
-    producedProperties: 05000000
+    consumedProperties: 030000000e000000
+    producedProperties: 050000000e000000
     hasBeenProcessed: 0
   - ruleStory: The student's powerpoint is good.
-    consumedProperties: 06000000
-    producedProperties: 07000000
+    consumedProperties: 060000000e000000
+    producedProperties: 070000000e000000
     hasBeenProcessed: 0
   - ruleStory: The student's powerpoint is bad.
-    consumedProperties: 06000000
-    producedProperties: 08000000
+    consumedProperties: 060000000e000000
+    producedProperties: 080000000e000000
     hasBeenProcessed: 0
   - ruleStory: The teacher's chair has a pinaise on it thats infected with a zombie
       virus.
-    consumedProperties: 09000000
-    producedProperties: 12000000
+    consumedProperties: 090000000e000000
+    producedProperties: 120000000e000000
     hasBeenProcessed: 0
   - ruleStory: Because the chair is infected, the teacher becomes a zombie.
     consumedProperties: 1200000000000000
