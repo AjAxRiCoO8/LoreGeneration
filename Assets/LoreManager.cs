@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 //[ExecuteInEditMode]
 public class LoreManager : MonoBehaviour
@@ -32,7 +33,7 @@ public class LoreManager : MonoBehaviour
     List<int> storyState;
 
     [HideInInspector]
-    string story;
+    string story = "";
 
     [HideInInspector]
     static LoreManager instance;
@@ -121,7 +122,9 @@ public class LoreManager : MonoBehaviour
 
     public void UpdateStory(string newLine)
     {
-        story += " " + newLine;
+        story = story.Replace("<b><i>", "");
+        story = story.Replace("</i></b>", "");
+        story += " <b><i>" + newLine + "</i></b>";
         UIManager.GetInstance().SetStoryText(story);
     }
 
