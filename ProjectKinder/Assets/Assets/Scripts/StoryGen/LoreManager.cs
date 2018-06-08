@@ -39,6 +39,8 @@ public class LoreManager : MonoBehaviour
     [HideInInspector]
     public int lastChosenRule;
 
+    StoryUIManager storyUIManager;
+
 
     // Use this for initialization
     void Start()
@@ -46,6 +48,8 @@ public class LoreManager : MonoBehaviour
         instance = this;
 
         storyState = new List<int>(init);
+
+        storyUIManager = GetComponent<StoryUIManager>();
 
         // Process all rules, checking for similar rules.
         for (int i = 0; i < rules.Count; i++)
@@ -141,7 +145,7 @@ public class LoreManager : MonoBehaviour
         story = story.Replace("<b><i>", "");
         story = story.Replace("</i></b>", "");
         story += " <b><i>" + newLine + "</i></b>";
-        StoryUIManager.GetInstance().SetStoryText(story);
+        storyUIManager.SetStoryText(story);
     }
 
     public void AddNewActiveActor(int newActor)

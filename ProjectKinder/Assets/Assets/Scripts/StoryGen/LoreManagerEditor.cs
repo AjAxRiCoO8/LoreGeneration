@@ -14,6 +14,7 @@ public class LoreManagerEditor : Editor
     SerializedObject GetTarget;
     SerializedProperty rules;
     SerializedProperty init;
+    SerializedProperty storyState;
     int ListSize = 0;
 
     void OnEnable()
@@ -22,6 +23,7 @@ public class LoreManagerEditor : Editor
         GetTarget = new SerializedObject(t);
         rules = GetTarget.FindProperty("rules"); // Find the List in our script and create a refrence of it
         init = GetTarget.FindProperty("init");
+        storyState = GetTarget.FindProperty("storyState");
     }
 
     public override void OnInspectorGUI()
@@ -252,6 +254,33 @@ public class LoreManagerEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        // Display Story State List
+        EditorGUILayout.LabelField("Current Story State");
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+
+        for (int i = 0; i < storyState.arraySize; i++)
+        {
+
+
+            // Display the property fields in two ways.
+
+            if (DisplayFieldType == 0)
+            {// Choose to display automatic or custom field types. This is only for example to help display automatic and custom fields.
+                //1. Automatic, No customization <-- Choose me I'm automatic and easy to setup
+
+            }
+            else
+            {
+                //Or
+                EditorGUILayout.BeginHorizontal();
+                EditorGUILayout.LabelField("Actor (" + i.ToString() + ")", GUILayout.MaxWidth(80));
+                EditorGUILayout.LabelField(t.actors[storyState.GetArrayElementAtIndex(i).intValue], GUILayout.MaxWidth(150));
+                EditorGUILayout.EndHorizontal();
+            }
+        }
 
         //Apply the changes to our list
         GetTarget.ApplyModifiedProperties();
