@@ -11,8 +11,7 @@ public class TriggerAddActor : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-           bool isLocalPlayer = other.GetComponent<FirstPersonController>().isLocalPlayer;
-           if (isLocalPlayer)
+           if (other.GetComponent<FirstPersonController>().isLocalPlayer)
            {
                 LoreManager loreManger = other.GetComponentInChildren<LoreManager>();
                 loreManger.AddNewActiveActor(0);

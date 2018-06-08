@@ -78,7 +78,11 @@ public class LoreProcessedRule {
         }
 
         // if the amount of hits is similar to the count, it means all requirements are met.
-        return temp.Count == amountOfHits;
+        if (temp.Count == amountOfHits)
+        {
+            return true;
+        }
+        return false;
     }
 
     // Activate the rule.

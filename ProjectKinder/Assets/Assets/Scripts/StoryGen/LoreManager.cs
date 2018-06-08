@@ -94,13 +94,6 @@ public class LoreManager : MonoBehaviour
 
     public void UpdateRules()
     {
-        /*
-        if (StoryComplete)
-        {
-            return;
-        }
-        */
-
         int i = 0;
 
         List<LoreProcessedRule> validRules = new List<LoreProcessedRule>();
@@ -125,14 +118,6 @@ public class LoreManager : MonoBehaviour
         //Debug.Log("Iterations needed for rule: " + LOOP_COUNTER);
         TOTAL_LOOPS += LOOP_COUNTER;
         LOOP_COUNTER = 0;
-
-        /*
-        if (validRules.Count == 0)
-        {
-            StoryComplete = true;
-            UpdateStory("\n<b>The End</b>");
-        }
-        */
     }
 
     public static LoreManager GetInstance()
@@ -150,7 +135,10 @@ public class LoreManager : MonoBehaviour
 
     public void AddNewActiveActor(int newActor)
     {
-        storyState.Add(newActor);
+        if (!storyState.Contains(newActor))
+        {
+            storyState.Add(newActor);
+        }
     }
 
     
@@ -165,7 +153,6 @@ public class LoreManager : MonoBehaviour
             rule.hasBeenProcessed = false;
         }
 
-        StoryComplete = false;
         lastChosenRule = -1;
     }
 
