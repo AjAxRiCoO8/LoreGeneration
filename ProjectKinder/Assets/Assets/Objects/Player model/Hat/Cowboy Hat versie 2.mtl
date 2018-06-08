@@ -1,0 +1,25 @@
+# Exported from 3D Builder
+
+newmtl OnderkantHoedBruin2
+Kd 0.729412 0.352941 0.086275
+
+newmtl Lichtbruin
+Kd 0.498039 0.200000 0.054902
+
+newmtl White
+Kd 0.878431 0.878431 0.878431
+
+newmtl Donkerbruin
+Kd 0.247059 0.098039 0.027451
+
+newmtl IetsMinderDonkerBruin
+Kd 0.258824 0.121569 0.050980
+
+newmtl White
+Kd 0.878431 0.878431 0.878431
+
+newmtl Donkerbruin
+Kd 0.247059 0.098039 0.027451
+
+newmtl IetsMinderDonkerBruin
+Kd 0.258824 0.121569 0.050980

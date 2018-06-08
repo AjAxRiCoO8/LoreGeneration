@@ -1,0 +1,252 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1957628454585152}
+  m_IsPrefabParent: 1
+--- !u!1 &1957628454585152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4106102526407530}
+  - component: {fileID: 114639182088687778}
+  m_Layer: 0
+  m_Name: Longer Presentation Story
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4106102526407530
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957628454585152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1076.1521, y: 608.20056, z: -34.947605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114639182088687778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957628454585152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ff84537959a2bb49a19109213fcf4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userChoicePercentage: 10
+  actors:
+  - Teacher
+  - TeacherIsHappy
+  - TeacherIsSad
+  - Student
+  - StudentIsNervous
+  - StudentIsConfident
+  - PowerPoint
+  - PowerPointIsGood
+  - PowerPointIsBad
+  - Chair
+  - ChairIsGood
+  - ChairIsBad
+  - GoodGrade
+  - BadGrade
+  - NoGrade
+  - ZombieInvasion
+  - TeacherIsZombie
+  - Zombie
+  - ChairIsInfected
+  - StudentIsZombie
+  - TeacherIsDead
+  - Presentation
+  - AudienceMember
+  - CuriousAudienceMember
+  - NonCuriousAudienceMember
+  - StudentIsSuperman
+  - DeadAudianceMember
+  - Grade?
+  - DacingStudent
+  rules:
+  - ruleStory: Because the teacher was happy, and the student was confident, the student
+      got a good grade.
+    consumedProperties: 01000000050000000e000000
+    producedProperties: 0c0000000100000005000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the student was confident, and the powerpoint was good, the
+      student got a good grade.
+    consumedProperties: 05000000070000000e000000
+    producedProperties: 0c0000000500000007000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the teacher was happy, and the powerpoint was good, the presentor
+      got a good grade.
+    consumedProperties: 01000000070000000e000000
+    producedProperties: 0c0000000700000001000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the chair is good, the teacher is happy.
+    consumedProperties: 0a000000000000000e000000
+    producedProperties: 010000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the chair is bad, the teacher is sad.
+    consumedProperties: 0b00000000000000
+    producedProperties: 02000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the teacher was sad, and the student was nervous, the student
+      got a bad grade.
+    consumedProperties: 02000000040000000e000000
+    producedProperties: 0d0000000200000004000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the student was nervous, and the powerpoint was bad, the student
+      got a bad grade.
+    consumedProperties: 04000000080000000e000000
+    producedProperties: 0d0000000800000004000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the teacher was sad, and the powerpoint was bad, the student
+      got a bad grade.
+    consumedProperties: 02000000080000000e000000
+    producedProperties: 0d0000000200000008000000
+    hasBeenProcessed: 0
+  - ruleStory: The teacher's chair is good.
+    consumedProperties: 090000000e000000
+    producedProperties: 0a0000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: The teacher's chair is bad.
+    consumedProperties: 090000000e000000
+    producedProperties: 0b0000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: The student is nervous.
+    consumedProperties: 030000000e000000
+    producedProperties: 040000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: The student is confident.
+    consumedProperties: 030000000e000000
+    producedProperties: 050000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: The student's powerpoint is good.
+    consumedProperties: 060000000e000000
+    producedProperties: 070000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: The student's powerpoint is bad.
+    consumedProperties: 060000000e000000
+    producedProperties: 080000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: The teacher's chair has a pinaise on it thats infected with a zombie
+      virus.
+    consumedProperties: 090000000e000000
+    producedProperties: 120000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the chair is infected, the teacher becomes a zombie.
+    consumedProperties: 1200000000000000
+    producedProperties: 1000000012000000
+    hasBeenProcessed: 0
+  - ruleStory: The zombie teacher attacks the student, but because the student is
+      confident, he kills the zombie teacher.
+    consumedProperties: 1000000005000000
+    producedProperties: 1400000005000000
+    hasBeenProcessed: 0
+  - ruleStory: The zombie teacher attacks the student, and because the student is
+      nervous, he turns into a zombie too.
+    consumedProperties: 1000000004000000
+    producedProperties: 1000000013000000
+    hasBeenProcessed: 0
+  - ruleStory: With multiple zombies, the presentation turned into a zombie invasion.
+    consumedProperties: 100000001300000015000000
+    producedProperties: 10000000130000000f000000
+    hasBeenProcessed: 0
+  - ruleStory: An audience member asks a question, but the student can't answer it.
+      He turns nervous.
+    consumedProperties: 03000000170000000e000000
+    producedProperties: 18000000040000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: An audience member asks a question, the student answers the question
+      correct. As a result, he gains confidence.
+    consumedProperties: 04000000170000000e000000
+    producedProperties: 05000000180000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: An audience member asks a question, the student answers the question
+      correct. As a result, he gains confidence.
+    consumedProperties: 03000000170000000e000000
+    producedProperties: 05000000180000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: An audience member asks a question, but the student can't answer it.
+      He turns nervous.
+    consumedProperties: 04000000170000000e000000
+    producedProperties: 04000000180000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: An audience member asks a question, the student answers the question
+      correct. He is now so confident he turns into superman.
+    consumedProperties: 05000000170000000e000000
+    producedProperties: 05000000180000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: An audience member asks a question, but the student can't answer it.
+      He turns nervous.
+    consumedProperties: 05000000170000000e000000
+    producedProperties: 04000000180000000e000000
+    hasBeenProcessed: 0
+  - ruleStory: There is a excited person watching the presentation.
+    consumedProperties: 16000000
+    producedProperties: 17000000
+    hasBeenProcessed: 0
+  - ruleStory: There is a bored person watching the presentation.
+    consumedProperties: 16000000
+    producedProperties: 18000000
+    hasBeenProcessed: 0
+  - ruleStory: The zombie teacher attacks the student, but he is not able to bite
+      through the super skin of the student, and he instantly dies
+    consumedProperties: 1000000019000000
+    producedProperties: 19000000
+    hasBeenProcessed: 0
+  - ruleStory: Because the student is superman, he gets the best grade possible.
+    consumedProperties: 0e00000019000000
+    producedProperties: 0c00000005000000
+    hasBeenProcessed: 0
+  - ruleStory: One of the students laptops exploded, and he is dead.
+    consumedProperties: 16000000
+    producedProperties: 1a0000001b000000
+    hasBeenProcessed: 0
+  - ruleStory: Nobody liked this student, so the presentation continues.
+    consumedProperties: 1a0000001b000000
+    producedProperties: 0e0000001a000000
+    hasBeenProcessed: 0
+  - ruleStory: 'The student was really likable, so the theacher cancels the presentation. '
+    consumedProperties: 1a0000001b000000
+    producedProperties: 1b000000
+    hasBeenProcessed: 0
+  - ruleStory: Beucauese of the bad presentation and the nervosity the student starts
+      doing a weird dance.
+    consumedProperties: 04000000080000000e000000
+    producedProperties: 080000000e0000001c000000
+    hasBeenProcessed: 0
+  - ruleStory: The teacher thinks the dance is funny and he is happy, so he decided
+      to give a good grade.
+    consumedProperties: 010000000e0000001c000000
+    producedProperties: 1c0000000c000000
+    hasBeenProcessed: 0
+  - ruleStory: he teacher doesnt get what the student is doing and he gets a bad grade.
+    consumedProperties: 020000000e0000001c000000
+    producedProperties: 0d0000001c000000
+    hasBeenProcessed: 0
+  - ruleStory: The teacher doesnt get what the student is doing and he gets a bad
+      grade.
+    consumedProperties: 000000000e0000001c000000
+    producedProperties: 0d0000001c000000
+    hasBeenProcessed: 0
+  init: 030000000000000009000000060000000e0000001500000016000000
+  storyState: 
+  StoryComplete: 0
+  lastChosenRule: 0
