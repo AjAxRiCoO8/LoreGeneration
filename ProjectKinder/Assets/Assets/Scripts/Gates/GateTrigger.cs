@@ -5,7 +5,7 @@ public class GateTrigger : Trigger {
 
 	public bool isOpen = true;
 
-	int players = 2;
+	int players = 1;
 	int enteredPlayers = 0;
 
 	void OnTriggerEnter(Collider collision) {

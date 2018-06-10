@@ -26,9 +26,4 @@ public class StoryUIManager : MonoBehaviour
         string test = text;
         storyTextUI.text = test;
     }
-
-    public void ResetStory()
-    {
-        LoreManager.GetInstance().ResetStory();
-    }
 }

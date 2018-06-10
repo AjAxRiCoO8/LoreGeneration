@@ -4,7 +4,6 @@ using System.Collections;
 public class OnTriggerDisableKinematic : MonoBehaviour {
 
     public PressurePlate plateOne;
-    public PressurePlate plateTwo;
 
     public GameObject[] floors = new GameObject[0];
 
@@ -15,7 +14,7 @@ public class OnTriggerDisableKinematic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-        if (plateOne.triggered && plateTwo.triggered)
+        if (plateOne.triggered)
         {
             if (!active)
             {

@@ -8,7 +8,6 @@ public class TreasureRoomDoorsScript : MonoBehaviour
     bool WallArtifact;
     public Animation doors;
     PlayMode mode;
-    public GameObject ArtifactLeft;
     public GameObject ArtifactRight;
     public bool open = false;
     public float doorSpeed;
@@ -27,12 +26,11 @@ public class TreasureRoomDoorsScript : MonoBehaviour
 	void Update ()
     {
         //finding the artifacts
-        ArtifactLeft = GameObject.FindGameObjectWithTag("MainArtifactLeft");
         ArtifactRight = GameObject.FindGameObjectWithTag("MainArtifactRight");
       
 
         //If the artifacts are null and the player has been near the table the door opens
-        if (ArtifactRight == null && ArtifactLeft == null && ByTable == true)
+        if (ArtifactRight == null && ByTable == true)
         {
             doors = this.GetComponent<Animation>();
             if (open == false)

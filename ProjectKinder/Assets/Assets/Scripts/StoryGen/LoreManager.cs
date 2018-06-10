@@ -10,6 +10,8 @@ public class LoreManager : MonoBehaviour
     public static int LOOP_COUNTER = 0;
     public static int TOTAL_LOOPS = 0;
 
+    private const int MaxLengthStory = 3;
+
     [SerializeField]
     public List<string> actors = new List<string>();
 
@@ -28,7 +30,10 @@ public class LoreManager : MonoBehaviour
     List<int> storyState;
 
     [HideInInspector]
-    string story = "";
+    Queue<string> story = new Queue<string>();
+
+    //[HideInInspector]
+    //string story = "";
 
     [HideInInspector]
     static LoreManager instance;
@@ -74,23 +79,15 @@ public class LoreManager : MonoBehaviour
             processedRules.Add(processedRule);
         }
 
-        UpdateRules();
         StartCoroutine(UpdateStory());
     }
 
     IEnumerator UpdateStory()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         UpdateRules();
         StartCoroutine(UpdateStory());
     }
-
-    /*
-    private void Update()
-    {
-        UpdateRules();
-    }
-    */
 
     public void UpdateRules()
     {
@@ -127,10 +124,22 @@ public class LoreManager : MonoBehaviour
 
     public void UpdateStoryText(string newLine)
     {
-        story = story.Replace("<b><i>", "");
-        story = story.Replace("</i></b>", "");
-        story += " <b><i>" + newLine + "</i></b>";
-        storyUIManager.SetStoryText(story);
+        if (story.Count >= MaxLengthStory)
+        {
+            story.Dequeue();
+        }
+
+        string currentStory = "";
+
+        foreach (var item in story)
+        {
+            currentStory += item + " ";
+        }
+
+        story.Enqueue(newLine);
+        currentStory += " <b><i>" + newLine + "</i></b>";
+
+        storyUIManager.SetStoryText(currentStory);
     }
 
     public void AddNewActiveActor(int newActor)
@@ -139,21 +148,6 @@ public class LoreManager : MonoBehaviour
         {
             storyState.Add(newActor);
         }
-    }
-
-    
-    public void ResetStory()
-    {
-        storyState = new List<int>(init);
-        story = "";
-        StoryUIManager.GetInstance().SetStoryText(story);
-
-        foreach (var rule in rules)
-        {
-            rule.hasBeenProcessed = false;
-        }
-
-        lastChosenRule = -1;
     }
 
     public List<string> Actors

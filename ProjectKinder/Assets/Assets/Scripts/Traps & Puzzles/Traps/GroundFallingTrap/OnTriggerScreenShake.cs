@@ -4,14 +4,13 @@ using System.Collections;
 public class OnTriggerScreenShake : MonoBehaviour {
 
     public PressurePlate plateOne;
-    public PressurePlate plateTwo;
 
     private bool active;
 
     // Update is called once per frame
     void Update()
     {
-        if (plateOne.triggered && plateTwo.triggered)
+        if (plateOne.triggered)
         {
             if (!active)
             {
