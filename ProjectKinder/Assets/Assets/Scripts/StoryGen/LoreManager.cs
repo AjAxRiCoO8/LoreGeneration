@@ -137,7 +137,7 @@ public class LoreManager : MonoBehaviour
         }
 
         story.Enqueue(newLine);
-        currentStory += " <b><i>" + newLine + "</i></b>";
+        currentStory += "<b><i>" + newLine + "</i></b>";
 
         storyUIManager.SetStoryText(currentStory);
     }
