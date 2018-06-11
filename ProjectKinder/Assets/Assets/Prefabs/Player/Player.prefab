@@ -4267,11 +4267,11 @@ MonoBehaviour:
   - Close
   - Win
   rules:
-  - ruleStory: 'I was never a coward, i know i can do this. '
+  - ruleStory: 'I was never a coward, I know I can do this. '
     consumedProperties: 00000000
     producedProperties: 02000000
     hasBeenProcessed: 0
-  - ruleStory: 'I am born a coward, i did not ask for this. '
+  - ruleStory: 'I am born a coward, I did not ask for this. '
     consumedProperties: 00000000
     producedProperties: 01000000
     hasBeenProcessed: 0
@@ -4279,7 +4279,7 @@ MonoBehaviour:
     consumedProperties: 0000000003000000
     producedProperties: 00000000
     hasBeenProcessed: 0
-  - ruleStory: I am lost forever my grave will be this desert
+  - ruleStory: I am lost forever! my grave will be this desert.
     consumedProperties: 0100000003000000
     producedProperties: 01000000
     hasBeenProcessed: 0
@@ -4287,22 +4287,22 @@ MonoBehaviour:
     consumedProperties: 0200000003000000
     producedProperties: 02000000
     hasBeenProcessed: 0
-  - ruleStory: How can this plants survive out here? it gives me hope! i will find
+  - ruleStory: How can these plants survive out here? It gives me hope! I will find
       a way to survive.
     consumedProperties: 0400000001000000
     producedProperties: 02000000
     hasBeenProcessed: 0
-  - ruleStory: How can this plants survive out here? it gives me hope! i will find
+  - ruleStory: How can these plants survive out here? It gives me hope! I will find
       a way to survive.
     consumedProperties: 0400000002000000
     producedProperties: 02000000
     hasBeenProcessed: 0
-  - ruleStory: I saw some plants today, sadly there was no water. I am scared i will
+  - ruleStory: I saw some plants today, sadly there was no water. I am scared I will
       not survive.
     consumedProperties: 0400000001000000
     producedProperties: 01000000
     hasBeenProcessed: 0
-  - ruleStory: 'I saw some plants today, sadly there was no water. I am scared i will
+  - ruleStory: 'I saw some plants today, sadly there was no water. I am scared I will
       not survive. '
     consumedProperties: 0400000002000000
     producedProperties: 01000000
@@ -4319,7 +4319,7 @@ MonoBehaviour:
     consumedProperties: 05000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: The piramide is here! Maybe i can find shelter inside
+  - ruleStory: The piramide is here! Maybe I can find shelter inside.
     consumedProperties: 05000000
     producedProperties: 
     hasBeenProcessed: 0
@@ -4335,26 +4335,26 @@ MonoBehaviour:
     consumedProperties: 06000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: I found some pillars, the entrance is close. At this point i don't
-      know if i want to go inside
+  - ruleStory: I found some pillars, the entrance is close. At this point I don't
+      know if I want to go inside.
     consumedProperties: 0100000007000000
     producedProperties: 01000000
     hasBeenProcessed: 0
-  - ruleStory: Pilars, maybe i am close to the entrance
+  - ruleStory: Pillars, maybe i am close to the entrance.
     consumedProperties: 07000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: There is a entrance. I don't want to go there, but i have to. i will
+  - ruleStory: There is a entrance. I don't want to go there, but I have to. I will
       die out here.
     consumedProperties: 0100000008000000
     producedProperties: 01000000
     hasBeenProcessed: 0
-  - ruleStory: I have found the entrance. Lets see if i can get something out of this
-      place.
+  - ruleStory: I have found the entrance. Let's see if I can get something out of
+      this place.
     consumedProperties: 0200000008000000
     producedProperties: 02000000
     hasBeenProcessed: 0
-  - ruleStory: 'There is a entrance. i can find cover for the storm here. '
+  - ruleStory: 'There is a entrance. I can find cover for the storm here. '
     consumedProperties: 08000000
     producedProperties: 
     hasBeenProcessed: 0
@@ -4363,15 +4363,15 @@ MonoBehaviour:
     consumedProperties: 09000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: 'The sand makes my mounth feel so dry. '
+  - ruleStory: 'The sand makes my mouth feel so dry. '
     consumedProperties: 09000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: How can the torch be burning after all this time? it scares me.
+  - ruleStory: How can the torch be burning after all this time? It scares me.
     consumedProperties: 020000000a000000
     producedProperties: 01000000
     hasBeenProcessed: 0
-  - ruleStory: In this place i thought about my past. I was a bad man, and maybe there
+  - ruleStory: In this place I thought about my past. I was a bad man, and maybe there
       is no chance to make it right.
     consumedProperties: 0b000000
     producedProperties: 10000000
@@ -4421,16 +4421,16 @@ MonoBehaviour:
     consumedProperties: 0c000000
     producedProperties: 0e000000
     hasBeenProcessed: 0
-  - ruleStory: There are buttons in the Pyramide. What will they do? i have seen this
+  - ruleStory: There are buttons in the Pyramide. What will they do? I have seen this
       icons before.
     consumedProperties: 0f000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: I am so sarced maybe i should keep hidding.
+  - ruleStory: I am so sarced maybe I should keep hidding.
     consumedProperties: 1200000001000000
     producedProperties: 01000000
     hasBeenProcessed: 0
-  - ruleStory: 'Cant keep hidding, i need to find a way out. '
+  - ruleStory: 'Cant keep hidding, I need to find a way out. '
     consumedProperties: 1200000002000000
     producedProperties: 02000000
     hasBeenProcessed: 0
@@ -4438,7 +4438,7 @@ MonoBehaviour:
     consumedProperties: 12000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: This place is darker than i could imagine. This will be the end.
+  - ruleStory: This place is darker than I could imagine. This will be the end.
     consumedProperties: 1300000001000000
     producedProperties: 01000000
     hasBeenProcessed: 0
@@ -4446,7 +4446,7 @@ MonoBehaviour:
     consumedProperties: 1300000002000000
     producedProperties: 02000000
     hasBeenProcessed: 0
-  - ruleStory: This place is darker than i could know. I will not survive, and no
+  - ruleStory: This place is darker than I could know. I will not survive, and no
       one will miss me.
     consumedProperties: 130000000d000000
     producedProperties: 0d000000
@@ -4472,12 +4472,12 @@ MonoBehaviour:
     consumedProperties: 1500000001000000
     producedProperties: 01000000
     hasBeenProcessed: 0
-  - ruleStory: 'There is a new code and i am not dead. Note: Bird, Loop, medallion,
+  - ruleStory: 'There is a new code and I am not dead. Note: Bird, Loop, medallion,
       Loop.'
     consumedProperties: 16000000
     producedProperties: 
     hasBeenProcessed: 0
-  - ruleStory: I can feel i am close. I am scared and alone. Why do i still live?
+  - ruleStory: I can feel I am close. I am scared and alone. Why do I still live?
     consumedProperties: 17000000010000000d000000
     producedProperties: 010000000d000000
     hasBeenProcessed: 0
@@ -4485,12 +4485,12 @@ MonoBehaviour:
     consumedProperties: 17000000020000000d000000
     producedProperties: 020000000d000000
     hasBeenProcessed: 0
-  - ruleStory: The exit is close! i can feel it. I have to be brave to see my family
+  - ruleStory: The exit is close! I can feel it. I have to be brave to see my family
       again.
     consumedProperties: 17000000020000000e000000
     producedProperties: 0e00000002000000
     hasBeenProcessed: 0
-  - ruleStory: The exit is close! i want to flee, to be safe at home again.
+  - ruleStory: The exit is close! I want to flee, to be safe at home again.
     consumedProperties: 17000000010000000e000000
     producedProperties: 010000000e000000
     hasBeenProcessed: 0
